@@ -2,7 +2,7 @@
 
 Flicks is a movies app using the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
-Time spent: **X** hours spent in total
+Time spent: 10 hours spent in total
 
 ## User Stories
 
@@ -35,7 +35,8 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Requesting information from the internet was a new concept for me so I struggled understanding and 
+implementing different parts of the app using the API key initially.
 
 ## License
 
