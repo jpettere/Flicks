@@ -12,8 +12,6 @@ import SwiftLoader
 
 class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
     
-    var refreshControl: UIRefreshControl!
-    
     
     @IBOutlet weak var tableView: UITableView!
 
@@ -28,7 +26,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     var filteredMovies: [NSDictionary]?
     
-
+    var refreshControl: UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +45,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     }
 
     @IBAction func didTapNetworkErrorView(sender: UITapGestureRecognizer) {
-        
         self.getMovieData()
     }
 
@@ -61,7 +58,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
             delegateQueue:NSOperationQueue.mainQueue())
         
         self.networkErrorView.backgroundColor = UIColor.lightGrayColor()
-        
         
         let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
             completionHandler: { (dataOrNil, response, error) in
@@ -127,14 +123,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         } else {
             return 0
         }
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
         let movie = self.filteredMovies![indexPath.row]
         let title = movie["title"] as! String
-        cell.titleLabel.textColor = UIColor.blueColor()
+        cell.titleLabel.textColor = UIColor.init(red: 77.0/255.0, green: 125.0/255.0, blue: 1.0, alpha: 1.0)
         let overview = movie["overview"] as! String
         
         let baseUrl = "http://image.tmdb.org/t/p/w500"
@@ -164,7 +159,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.overviewLabel.text = overview
        // cell.backgroundColor = UIColor.clearColor()
     
-
         return cell
     }
     
@@ -176,22 +170,17 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.reloadData()
     }
     
-    
-    
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         SwiftLoader.show(title: "Loading...", animated: true)
         SwiftLoader.hide()
     }
     
-    
     @IBAction func didTapTableView(sender: AnyObject) {
         
         view.endEditing(true)
     }
 
-
-    
 
     /*
     // MARK: - Navigation

@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Movie-->
+        <!--Movies-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MoviesViewController" customModule="Flicks" customModuleProvider="target" sceneMemberID="viewController">
@@ -86,7 +86,7 @@
                             <outletCollection property="gestureRecognizers" destination="U9Y-r4-ibw" appends="YES" id="l9e-7O-ZLm"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Movie" id="Atq-4l-dff"/>
+                    <navigationItem key="navigationItem" title="Movies" id="Atq-4l-dff"/>
                     <connections>
                         <outlet property="networkErrorView" destination="09u-rm-Qkn" id="6la-ja-SwI"/>
                         <outlet property="searchBar" destination="tU1-pO-rxL" id="Epp-tA-M0S"/>
