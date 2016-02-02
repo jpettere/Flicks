@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		21A7833559EDAB4BDCFEC4A2 /* Pods_Flicks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 805C119C3301FCBC03C48110 /* Pods_Flicks.framework */; };
+		F12960761C6002B2000C3289 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12960751C6002B2000C3289 /* DetailViewController.swift */; };
 		F17065BC1C3F3A0900C80725 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F17065BB1C3F3A0900C80725 /* AppDelegate.swift */; };
 		F17065C11C3F3A0900C80725 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F17065BF1C3F3A0900C80725 /* Main.storyboard */; };
 		F17065C31C3F3A0900C80725 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F17065C21C3F3A0900C80725 /* Assets.xcassets */; };
@@ -20,6 +21,7 @@
 		31AE1837D4B630626260F6C4 /* Pods-Flicks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicks.release.xcconfig"; path = "Pods/Target Support Files/Pods-Flicks/Pods-Flicks.release.xcconfig"; sourceTree = "<group>"; };
 		3D10EE146FCEBD384C2EB6B8 /* Pods-Flicks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Flicks.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Flicks/Pods-Flicks.debug.xcconfig"; sourceTree = "<group>"; };
 		805C119C3301FCBC03C48110 /* Pods_Flicks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Flicks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F12960751C6002B2000C3289 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		F17065B81C3F3A0900C80725 /* Flicks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Flicks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F17065BB1C3F3A0900C80725 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F17065C01C3F3A0900C80725 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				F17065CF1C3F3D1000C80725 /* MoviesViewController.swift */,
+				F12960751C6002B2000C3289 /* DetailViewController.swift */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				F17065BC1C3F3A0900C80725 /* AppDelegate.swift in Sources */,
 				F17065D01C3F3D1000C80725 /* MoviesViewController.swift in Sources */,
 				F17065D31C40AF6900C80725 /* MovieCell.swift in Sources */,
+				F12960761C6002B2000C3289 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
