@@ -21,12 +21,10 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     
     var config : SwiftLoader.Config = SwiftLoader.Config()
-    
     var movies: [NSDictionary]?
-    
     var filteredMovies: [NSDictionary]?
-    
     var refreshControl: UIRefreshControl!
+    var endpoint: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +39,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         self.loadingImage()
         self.getMovieData()
         self.controlRefresh()
-        
+
         
 
     }
@@ -52,7 +50,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     func getMovieData() {
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = NSURL(string:"https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")
+        let url = NSURL(string:"https://api.themoviedb.org/3/movie/\(endpoint)?api_key=\(apiKey)")
         let request = NSURLRequest(URL: url!)
         let session = NSURLSession(
             configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
@@ -129,19 +127,25 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
         let cell = tableView.dequeueReusableCellWithIdentifier("MovieCell", forIndexPath: indexPath) as! MovieCell
+        
+        
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.lightGrayColor()
+        cell.selectedBackgroundView = backgroundView
+        
         let movie = self.filteredMovies![indexPath.row]
         let title = movie["title"] as! String
         cell.titleLabel.textColor = UIColor.init(red: 77.0/255.0, green: 125.0/255.0, blue: 1.0, alpha: 1.0)
         let overview = movie["overview"] as! String
         
         let baseUrl = "http://image.tmdb.org/t/p/w500"
+        
         if let posterPath = movie["poster_path"] as? String {
             let imageUrl = NSURLRequest(URL: NSURL(string: baseUrl + posterPath)!)
             cell.posterView.setImageWithURLRequest(imageUrl,
                 placeholderImage: nil,
                 success: { (imageRequest, imageResponse, image) -> Void in
                     
-                    // imageResponse will be nil if the image is cached
                     if imageResponse != nil {
                         print("Image was NOT cached, fade in image")
                         cell.posterView.alpha = 0.0
@@ -157,9 +161,9 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                 failure: { (imageRequest, imageResponse, error) -> Void in
             })
         }
+        
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
-       // cell.backgroundColor = UIColor.clearColor()
     
         return cell
     }
