@@ -82,6 +82,7 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 1. fixing the search bar so that ontap for the cells actually works
 2. lambda - how it works
+3. implementing a collection view and table view at the same time
 
 ## Video Walkthrough 
 
@@ -93,7 +94,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+Getting the search bar to properly search through top rated or currently out based on which tab was selected.
 
 ## License
 
